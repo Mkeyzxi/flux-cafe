@@ -1,0 +1,126 @@
+// document.addEventListener('DOMContentLoaded', () => {
+//     let condition = false; // awal kondisi false
+
+//     const humburger = document.getElementById('menu-hamburger');
+//     const spans = document.querySelectorAll('#menu-hamburger span');
+// 	const nav = document.querySelector('.nav-links');
+// 	console.log(nav);
+//     humburger.addEventListener('click', () => {
+//         condition = !condition; // kondisi pengecekan
+//         if (condition) {
+//             spans[0].style.transform = 'translateY(11px) rotate(45deg)';
+//             spans[2].style.transform = 'translateY(-1px) rotate(-45deg)';
+//             spans[1].style.visibility = 'hidden';
+//             spans[3].style.visibility = 'hidden';
+//             nav.style.display = 'block';
+//         } else {
+//             spans[0].style.transform = 'translateY(0) rotate(0)';
+//             spans[2].style.transform = 'translateY(0) rotate(0)';
+//             spans[1].style.visibility = 'visible';
+//             spans[3].style.visibility = 'visible';
+// 			nav.style.display = 'none';
+//         }
+//     });
+// });
+
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const humburger = document.getElementById('menu-hamburger');
+// 	const spans = humburger.querySelectorAll('span');
+//
+// 	humburger.addEventListener('click', () => {
+// 		humburger.classList.toggle('open');
+// 		spans[0].classList.toggle('rotate-45');
+// 		spans[0].classList.toggle('translate-y-[11px]');
+// 		spans[2].classList.toggle('-rotate-45');
+// 		spans[2].classList.toggle('-translate-y-[1px]');
+// 		spans[1].classList.toggle('hidden');
+// 		spans[3].classList.toggle('hidden');
+// 	});
+// });
+
+// Fungsi format rupiah
+const formatRP = (nilai) => {
+	return new Intl.NumberFormat('id-ID', {
+		style: 'currency',
+		currency: 'IDR',
+		minimumFractionDigits: 0,
+	}).format(nilai);
+};
+
+let menuData = [];
+
+const renderMenu = (data) => {
+	const menuCard = document.querySelector('.menu-card');
+	let templates = data
+		.map(
+			({path, productName, price, likes}) => `
+        <div class="product-card">
+            <div class="like-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#FFCF50" d="m20.27 16.265l.705-4.08a1.666 1.666 0 0 0-1.64-1.95h-5.182a.833.833 0 0 1-.821-.969l.663-4.045a4.8 4.8 0 0 0-.09-1.973a1.64 1.64 0 0 0-1.093-1.137l-.145-.047a1.35 1.35 0 0 0-.993.068c-.34.164-.588.463-.68.818l-.476 1.834a7.6 7.6 0 0 1-.656 1.679c-.416.777-1.058 1.4-1.725 1.975l-1.44 1.24a1.67 1.67 0 0 0-.572 1.406l.813 9.393A1.666 1.666 0 0 0 8.596 22h4.649c3.481 0 6.452-2.426 7.024-5.735"/>
+                    <path fill="#FFCF50" fill-rule="evenodd" d="M2.968 9.485a.75.75 0 0 1 .78.685l.97 11.236a1.237 1.237 0 1 1-2.468.107V10.234a.75.75 0 0 1 .718-.749" clip-rule="evenodd" opacity="0.5"/>
+                </svg> ${likes} likes
+            </div>
+            <figure class="product-image">
+                <img src="${path}" alt="${productName}">
+            </figure>
+            <h3 class="product-title">${productName}</h3>
+            <p class="product-price">${formatRP(price)}</p>
+            <button class="buy-btn">MEMBELI</button>
+        </div>`,
+		)
+		.join('');
+
+	menuCard.innerHTML = templates;
+
+	// Tambahkan event listener setelah elemen di-render
+	document.querySelectorAll('.buy-btn').forEach((button) => {
+		button.addEventListener('click', (event) => {
+			const productCard = event.target.closest('.product-card');
+			const productName =
+				productCard.querySelector('.product-title').textContent;
+			pesanWa(`Saya ingin membeli ${productName}`);
+		});
+	});
+};
+
+const menu = async () => {
+	try {
+		const response = await fetch('/assets/js/data.json');
+		menuData = await response.json();
+		renderMenu(menuData);
+	} catch (error) {
+		console.error('Error loading data:', error);
+	}
+};
+
+const filterMenu = (type) => {
+	const filteredData = menuData.filter((item) => item.type === type);
+	renderMenu(filteredData);
+};
+
+const showAllMenu = () => {
+	renderMenu(menuData);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+	const buttonChoice = document.querySelectorAll('.menu-flux-link li');
+	menu();
+
+	buttonChoice.forEach((button) => {
+		button.addEventListener('click', () => {
+			// Reset semua elemen agar tidak ada yang berwarna merah
+			buttonChoice.forEach((btn) => btn.classList.remove('about-animation'));
+
+			// Set warna merah pada elemen yang diklik
+			button.classList.add('about-animation');
+		});
+	});
+});
+
+function pesanWa(message) {
+	const waMbul = `https://wa.me/6282154540270?text=${encodeURIComponent(
+		message,
+	)}`;
+	window.open(waMbul, '_blank');
+}

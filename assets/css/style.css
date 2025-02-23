@@ -1,0 +1,620 @@
+.poppins-light {
+	font-family: 'Poppins', serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.poppins-regular {
+	font-family: 'Poppins', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.poppins-semibold {
+	font-family: 'Poppins', serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+h1 {
+	font-family: 'Poppins', serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+:root {
+	--primary: #a4b465;
+	--secondary: #ffcf50;
+	--text: #222020;
+	--heading: #626f47;
+	--background: #fefae0;
+}
+body {
+	font-family: Arial, sans-serif;
+	background-color: var(--background);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: start;
+	justify-content: start;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 50px;
+	background-color: #333;
+	position: fixed;
+	top: -1px;
+	left: -1px;
+	z-index: 100;
+	right: 0;
+	color: var(--text);
+	background-color: #fefae0;
+}
+.logo img {
+	width: 6em;
+}
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+}
+.nav-links a {
+	text-decoration: none;
+	color: var(--text);
+	font-size: 16px;
+}
+
+nav ul.nav-links {
+	padding: 10px 15px;
+	background-color: var(--primary);
+	border-radius: 60px;
+}
+
+header .social-media .media {
+	width: 30px;
+}
+
+/* .hamburger {
+	width: 32px;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: end;
+	gap: 3px;
+	cursor: pointer;
+}
+.hamburger span {
+	display: block;
+	height: 3px;
+	background-color: #4a5568;
+	border-radius: 4px;
+	transition: all 0.3s ease;
+}
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(3) {
+	width: 100%;
+}
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(4) {
+	width: 90%;
+}
+.hamburger:hover span {
+	background-color: #2563eb;
+} */
+
+/* class rotate humberger */
+.rotate-humburger-span0 {
+	transform: translateY(11px) rotate(45deg) !important;
+}
+.rotate-humburger-span2 {
+	transform: translateY(-1px) rotate(-45deg) !important;
+}
+/* end rotate humberger */
+
+
+.social-media {
+	display: flex;
+	gap: 10px;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.social-media a {
+	text-decoration: none;
+	color: var(--text);
+	font-size: 18px;
+}
+
+/* main */
+/* Main styling */
+.background {
+	position: relative;
+	background-image: url('../img/cafe/background-beranda.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 50vh; /* Lebih tinggi agar lebih elegan */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--primary);
+	text-align: center;
+	overflow: hidden;
+	box-shadow: 0px 15px 25px rgba(98, 111, 71, 0.6);
+	margin-top: 3.8rem;
+}
+
+/* Overlay effect */
+.background::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4); /* Efek gelap agar teks lebih jelas */
+}
+
+/* Content Styling */
+.content {
+	position: relative;
+	z-index: 2;
+	max-width: 650px;
+	text-align: center;
+	padding: 20px;
+}
+
+.content h1 {
+	font-size: 6.3rem;
+	color: #fff;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.content p {
+	font-size: 1.2rem;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+}
+
+/* animasi fadeIn */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.about-animation {
+    background-color: #ffcf50;
+    color: #626f47;
+    transform: scale(0.8); /* Awalnya lebih kecil */
+    animation: fadeScaleIn 0.6s ease-in forwards; /* Menjalankan animasi */
+}
+
+@keyframes fadeScaleIn {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+		border-radius: 5px;
+    }
+}
+
+@keyframes custom {
+	from {
+		background-size: 0;
+	}to {
+		background-size: 100%;
+}}
+
+.content {
+	animation: fadeIn 1s ease-in-out;
+}
+
+main {
+	width: 80%;
+	/* background-color: red !important; */
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	gap: 40px;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	padding-left: 7%;
+}
+/* about-cafe */
+
+section.about-cafe {
+	width: 100%;
+
+	/* color: red; */
+
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	gap: 25px;
+}
+p {
+	text-align: left;
+}
+section.about-cafe .about-text hr {
+	height: 100%;
+	width: 1px;
+	background-color: var(--text);
+	border: none;
+	margin: 0 10px;
+	display: flex;
+	color: black;
+}
+/* end about cafe */
+
+section.about-cafe .about-images {
+	width: 100%;
+	display: flex;
+	gap: 10px;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+section.about-cafe figure {
+	width: 340px;
+	height: 170px;
+	overflow: clip;
+}
+img {
+	width: 100%; /* Sesuaikan dengan kebutuhan */
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+/* h2 {
+    text-align: left !important;
+} */
+
+main section.menu-flux {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+}
+main section.menu-flux .menu-flux-link {
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+
+main section.menu-flux article {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 10px 5% 40px 5%;
+	align-items: center;
+}
+
+main section.menu-flux ul {
+	display: flex;
+	list-style: none;
+	gap: 1em;
+}
+
+main section.menu-flux ul li {
+	
+	padding: 4px;
+}
+
+
+/* main section.menu-flux ul li:hover {
+	color: var(--heading);
+	background-color: var(--secondary);
+	border-radius: 5px 10px 5px 5px;
+	-webkit-border-radius: 5px 10px 5px 5px;
+	-moz-border-radius: 5px 10px 5px 5px;
+	-ms-border-radius: 5px 10px 5px 5px;
+	-o-border-radius: 5px 10px 5px 5px;
+} */
+
+/* card */
+main section.menu-flux .menu-card {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap; /* Agar konten turun ke bawah jika tidak muat */
+	justify-content: center; /* Menengahkan konten */
+	gap: 15px; /* Jarak antar elemen */
+	/* padding: 10px;
+    margin: 20px; */
+	/* background-color: #333; */
+}
+.product-card {
+	width: 240px;
+	background: var(--primary); /* Warna soft beige */
+	border-radius: 20px;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	position: relative;
+	font-family: Arial, sans-serif;
+}
+
+.like-badge {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 5px 10px;
+	border-radius: 15px;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.2));
+}
+
+.product-image img {
+	width: 100%;
+	height: 110px;
+	margin-top: 20px;
+}
+
+.product-title {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.product-price {
+	font-size: 14px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.buy-btn {
+	background: black;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.buy-btn:hover {
+	background: #444;
+}
+
+/* aside */
+/* --- Aside Profile --- */
+/* --- Variabel Warna --- */
+:root {
+	--primary: #a4b465;
+	--secondary: #ffcf50;
+	--text: #222020;
+	--heading: #626f47;
+	--background: #fefae0;
+}
+
+/* --- Aside Profile --- */
+aside#kontak {
+	width: 230px;
+	height: 320px;
+	background-color: var(--secondary); /* Background mengikuti secondary */
+	padding: 0.7rem;
+	border-top: 4px solid var(--primary);
+	border-bottom: 4px solid var(--primary);
+	border-radius: 8px;
+	margin: 3rem auto;
+
+	position: relative;
+	box-shadow: 1.5px 1.5px 4px rgba(34, 32, 32, 0.3);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* --- Gambar Profil --- */
+aside#kontak .profile img {
+	display: block;
+	margin: 0 auto;
+	width: 120px;
+	border-radius: 10%;
+	filter: drop-shadow(1.5px 1.5px 4px var(--primary));
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Nama Posisi --- */
+aside#kontak h3 {
+	font-family: 'Urbanist', sans-serif;
+	font-size: 0.9rem;
+	color: var(--heading);
+	margin-top: 0.8rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* --- Media Sosial --- */
+aside#kontak .kontak ul {
+	display: flex;
+	justify-content: center;
+	gap: 0.7rem;
+	list-style: none;
+	margin-top: 8px;
+	padding: 0;
+}
+
+aside#kontak .kontak ul li a {
+	font-size: 1.2rem;
+	color: var(--text);
+	transition: color 0.3s ease;
+}
+
+aside#kontak .kontak ul li a:hover {
+	color: var(--heading);
+}
+
+/* --- Efek Hover pada Aside --- */
+aside#kontak::before {
+	content: 'Makbul N';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(-15deg);
+	opacity: 0;
+	color: var(--primary);
+	font-size: 1.3em;
+	font-family: 'Urbanist', sans-serif;
+	font-weight: bold;
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Hover: Kurangi Opacity Gambar Supaya Tulisan Terlihat --- */
+aside#kontak:hover::before {
+	opacity: 1;
+	color: var(--text);
+}
+
+aside#kontak:hover img {
+	opacity: 0.3;
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* end aside */
+
+/* footer */
+footer {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--text);
+	color: var(--background);
+}
+/* end footer */
+
+@media (max-width: 768px) {
+	
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		background-color: var(--primary);
+		text-align: center;
+		padding: 10px 0;
+	}
+	header .social-media .media {
+		display: none;
+	}
+	.nav-links.active {
+		display: flex;
+	}
+	main section.menu-flux .menu-flux-link {
+		justify-content: center;
+		align-items: center;
+	}
+	main {
+		width: 100%;
+		/* padding: 10px 5px; */
+	}
+	main section.menu-flux .menu-card {
+		/* padding: 5px 5px; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: wrap;
+		/* background: red; */
+	}
+	
+	main section.menu-flux .menu-card .product-card {
+		width: 160px;
+		padding: 10px 0;
+	}
+
+	main section.menu-flux ul {
+		gap: 0.2em;
+	}
+
+	main section.menu-flux ul li {
+		padding: 4px;
+	}
+
+	main section.menu-flux ul li a {
+		text-decoration: none;
+		padding: 3px;
+	}
+	h1 {
+		line-height: 100px;
+	}
+	#menu-hamburger {
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	main {
+		width: 100%;
+		padding-inline: 20px;
+	}
+
+	
+
+	section.about-cafe {
+		align-items: center;
+		text-align: center;
+	}
+
+	section.about-cafe .about-images {
+		gap: 15px;
+	}
+
+	section.about-cafe figure {
+		flex: 1;
+	}
+
+	main section.menu-flux ul {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	main section.menu-flux .menu-card {
+		justify-content: center;
+	}
+
+	.product-card {
+		width: 180px;
+	}
+
+	aside#kontak {
+		width: 200px;
+		height: auto;
+		padding: 10px;
+	}
+}
