@@ -12,19 +12,29 @@ Fluex Cafe adalah sebuah situs web landing page untuk kafe bertema unik yang men
 
 ## Struktur Proyek
 ```
-FluexCafe/
-│── assets/
-│   ├── css/
-│   │   ├── style.css
-│   ├── img/
+/project-root
+│── /assets
+│   ├── /css
+│   │   └── style.css
+│   ├── /font
+│   ├── /img
+│   │   ├── /cafe
+│   │   ├── /makanan
+│   │   ├── /minuman
 │   │   ├── icon-flux.png
+│   │   ├── image.png
+│   │   ├── profile.png
+│   ├── /js
+│   │   ├── data.json
+│   │   ├── script.js
 │── index.html
 │── README.md
+
 ```
 ## Instalasi dan Penggunaan
 1. **Clone repository**
    ```sh
-   git clone https://github.com/username/FluexCafe.git
+   git clone https://github.com/mkeyzxi/FluexCafe.git
    ```
 2. **Buka file `index.html` di browser**
    Anda bisa langsung membuka file `index.html` di browser untuk melihat tampilan website.
