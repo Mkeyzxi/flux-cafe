@@ -1,4 +1,26 @@
 
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* deklarasi warna */
+:root {
+	--primary: #a4b465;
+	--secondary: #ffcf50;
+	--text: #222020;
+	--heading: #626f47;
+	--background: #fefae0;
+}
+/* end deklarasi warna */
 
 /* font */
 .poppins-light {
@@ -19,15 +41,14 @@
 	font-style: normal;
 }
 /* end font */
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', serif;
-	font-weight: 400;
-	font-style: normal;
+/* selection */
+::selection {
+	background: var(--heading); 
+	color: var(--secondary); 
+	padding: 5px;
 }
+
+/* end selection */
 
 h1 {
 	font-family: 'Poppins', serif;
@@ -35,13 +56,7 @@ h1 {
 	font-style: normal;
 }
 
-:root {
-	--primary: #a4b465;
-	--secondary: #ffcf50;
-	--text: #222020;
-	--heading: #626f47;
-	--background: #fefae0;
-}
+
 body {
 	font-family: Arial, sans-serif;
 	background-color: var(--background);
@@ -256,8 +271,8 @@ header .social-media .media {
 .about-animation {
     background-color: #ffcf50;
     color: #626f47;
-    transform: scale(0.8); /* Awalnya lebih kecil */
-    animation: fadeScaleIn 0.6s ease-in forwards; /* Menjalankan animasi */
+    transform: scale(0.8);
+    animation: fadeScaleIn 0.6s ease-in forwards; 
 }
 
 @keyframes fadeScaleIn {
@@ -334,6 +349,7 @@ section.about-cafe figure {
 	width: 340px;
 	height: 170px;
 	overflow: clip;
+	border-radius: 5px;
 }
 img {
 	width: 100%; /* Sesuaikan dengan kebutuhan */
@@ -358,7 +374,10 @@ main section.menu-flux .menu-flux-link {
 	align-items: center;
 	cursor: pointer;
 }
-
+main section.menu-flux .menu-flux-link ul li:hover {
+	background-color: #ffcf50;
+    color: #626f47;
+}
 main section.menu-flux article {
 	width: 100%;
 	display: flex;
@@ -483,7 +502,7 @@ main section.menu-flux .menu-card {
 /* --- Aside Profile --- */
 aside#kontak {
 	width: 230px;
-	height: 320px;
+	height: 340px;
 	background-color: var(--secondary); /* Background mengikuti secondary */
 	padding: 0.7rem;
 	border-top: 4px solid var(--primary);
@@ -512,8 +531,8 @@ aside#kontak .profile img {
 /* --- Nama Posisi --- */
 aside#kontak h3 {
 	font-family: 'Urbanist', sans-serif;
-	font-size: 0.9rem;
-	color: var(--heading);
+	font-size: 1.2	rem;
+	color: var(--text);
 	margin-top: 0.8rem;
 	font-weight: bold;
 	text-align: center;
@@ -667,8 +686,8 @@ footer {
 	}
 
 	aside#kontak {
-		width: 200px;
-		height: auto;
+		width: 270px;
+		height: 330px;
 		padding: 10px;
 	}
 }

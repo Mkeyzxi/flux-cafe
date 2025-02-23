@@ -1,4 +1,6 @@
-// Fungsi format rupiah
+// deklarasi variabel untuk menyimpan data
+let menuData = [];
+// fungsi format rupiah
 const formatRP = (nilai) => {
 	return new Intl.NumberFormat('id-ID', {
 		style: 'currency',
@@ -7,8 +9,7 @@ const formatRP = (nilai) => {
 	}).format(nilai);
 };
 
-let menuData = [];
-
+// fungsi merender isi dari menu card
 const renderMenu = (data) => {
 	const menuCard = document.querySelector('.menu-card');
 	let templates = data
@@ -24,9 +25,8 @@ const renderMenu = (data) => {
             <figure class="product-image">
                 <img src="${path}" alt="${productName}">
             </figure>
-			 <h3 class="product-title">${productName}</h3>
-           <div class="product-info">
-		   
+			<h3 class="product-title">${productName}</h3>
+        <div class="product-info">
             <p class="product-price">${formatRP(
 							price,
 						)}</p><button class="buy-btn">MEMBELI</button></div>
@@ -37,7 +37,6 @@ const renderMenu = (data) => {
 
 	menuCard.innerHTML = templates;
 
-	// Tambahkan event listener setelah elemen di-render
 	document.querySelectorAll('.buy-btn').forEach((button) => {
 		button.addEventListener('click', (event) => {
 			const productCard = event.target.closest('.product-card');
@@ -48,6 +47,7 @@ const renderMenu = (data) => {
 	});
 };
 
+// fungsi melakukan fethcing data json
 const menu = async () => {
 	try {
 		const response = await fetch('/assets/js/data.json');
@@ -68,14 +68,13 @@ const showAllMenu = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-	const buttonChoice = document.querySelectorAll('.menu-flux-link li');
 	menu();
-
+	const buttonChoice = document.querySelectorAll('.menu-flux-link li');
+	buttonChoice[0].classList.add('about-animation');
 	buttonChoice.forEach((button) => {
 		button.addEventListener('click', () => {
 			// Reset semua elemen agar tidak ada yang berwarna merah
 			buttonChoice.forEach((btn) => btn.classList.remove('about-animation'));
-
 			// Set warna merah pada elemen yang diklik
 			button.classList.add('about-animation');
 		});
@@ -118,8 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+// ketika discroll menampilkan shadow di bagian header
+window.addEventListener('scroll', () => {
+	const header = document.querySelector('header');
+	const {pageYOffset} = window;
+	console.log(pageYOffset);
+
+	if (pageYOffset > 0) {
+		header.style.boxShadow = '0 2px 20px var(--text)';
+	} else {
+		header.style.boxShadow = 'none';
+	}
+});
+
+// button diklik masuk ke whatsapp
 function pesanWa(message) {
-	const waMbul = `https://wa.me/6282154540270?text=${encodeURIComponent(
+	const waMbul = `https://wa.me/6285342181132?text=${encodeURIComponent(
 		message,
 	)}`;
 	window.open(waMbul, '_blank');
