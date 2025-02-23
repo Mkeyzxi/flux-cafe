@@ -1,43 +1,3 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//     let condition = false; // awal kondisi false
-
-//     const humburger = document.getElementById('menu-hamburger');
-//     const spans = document.querySelectorAll('#menu-hamburger span');
-// 	const nav = document.querySelector('.nav-links');
-// 	console.log(nav);
-//     humburger.addEventListener('click', () => {
-//         condition = !condition; // kondisi pengecekan
-//         if (condition) {
-//             spans[0].style.transform = 'translateY(11px) rotate(45deg)';
-//             spans[2].style.transform = 'translateY(-1px) rotate(-45deg)';
-//             spans[1].style.visibility = 'hidden';
-//             spans[3].style.visibility = 'hidden';
-//             nav.style.display = 'block';
-//         } else {
-//             spans[0].style.transform = 'translateY(0) rotate(0)';
-//             spans[2].style.transform = 'translateY(0) rotate(0)';
-//             spans[1].style.visibility = 'visible';
-//             spans[3].style.visibility = 'visible';
-// 			nav.style.display = 'none';
-//         }
-//     });
-// });
-
-// document.addEventListener('DOMContentLoaded', () => {
-// 	const humburger = document.getElementById('menu-hamburger');
-// 	const spans = humburger.querySelectorAll('span');
-//
-// 	humburger.addEventListener('click', () => {
-// 		humburger.classList.toggle('open');
-// 		spans[0].classList.toggle('rotate-45');
-// 		spans[0].classList.toggle('translate-y-[11px]');
-// 		spans[2].classList.toggle('-rotate-45');
-// 		spans[2].classList.toggle('-translate-y-[1px]');
-// 		spans[1].classList.toggle('hidden');
-// 		spans[3].classList.toggle('hidden');
-// 	});
-// });
-
 // Fungsi format rupiah
 const formatRP = (nilai) => {
 	return new Intl.NumberFormat('id-ID', {
@@ -64,9 +24,13 @@ const renderMenu = (data) => {
             <figure class="product-image">
                 <img src="${path}" alt="${productName}">
             </figure>
-            <h3 class="product-title">${productName}</h3>
-            <p class="product-price">${formatRP(price)}</p>
-            <button class="buy-btn">MEMBELI</button>
+			 <h3 class="product-title">${productName}</h3>
+           <div class="product-info">
+		   
+            <p class="product-price">${formatRP(
+							price,
+						)}</p><button class="buy-btn">MEMBELI</button></div>
+            
         </div>`,
 		)
 		.join('');
@@ -115,6 +79,42 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Set warna merah pada elemen yang diklik
 			button.classList.add('about-animation');
 		});
+	});
+
+	const humburgerMenu = document.getElementById('menu-hamburger');
+	let condition = false;
+	const sidebar = document.getElementById('sidebar');
+	const span = document.querySelectorAll('span');
+
+	humburgerMenu.addEventListener('click', () => {
+		if (window.innerWidth < 768) {
+			condition = !condition;
+			span[0].classList.toggle('rotate-humburger-span0');
+			span[2].classList.toggle('rotate-humburger-span2');
+
+			if (condition) {
+				span[1].style.visibility = 'hidden';
+				span[3].style.visibility = 'hidden';
+				sidebar.style.display = 'block';
+				sidebar.style.right = '0';
+			} else {
+				span[1].style.visibility = 'visible';
+				span[3].style.visibility = 'visible';
+				sidebar.style.display = 'none';
+			}
+		}
+	});
+
+	// menutup sidebar otomatis jika layar diperbesar ke ukuran laptop
+	window.addEventListener('resize', () => {
+		if (window.innerWidth >= 768) {
+			sidebar.style.display = 'none';
+			condition = false; // Reset kondisi agar tidak tetap terbuka di mode mobile setelah resize
+			span[1].style.visibility = 'visible';
+			span[3].style.visibility = 'visible';
+			span[0].classList.toggle('rotate-humburger-span0');
+			span[2].classList.toggle('rotate-humburger-span2');
+		}
 	});
 });
 

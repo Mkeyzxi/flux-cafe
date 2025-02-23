@@ -7,13 +7,17 @@
 	<title>Fluex Cafe | Landing Page</title>
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<!-- font  -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<!-- icon -->
-  <!-- CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<!-- font  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;600&display=swap"
+		rel="stylesheet">
+	<!-- icon -->
+	<!-- CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -21,7 +25,7 @@
 		<div class="logo">
 			<img src="assets/img/icon-flux.png" alt="Flux Logo">
 		</div>
-		
+
 		<nav>
 			<ul class="nav-links">
 				<li><a href="#intro">Intro</a>
@@ -63,15 +67,22 @@
 		<!-- checked -->
 		<!-- <label for="menu-hamburger"> -->
 
-		
-		<!-- <div  id="menu-hamburger" class="hamburger">
-			<span ></span>
+
+		<div id="menu-hamburger" class="hamburger">
 			<span></span>
-			<span ></span>
-			<span></span>	
-		</div> -->
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 
 	</header>
+	<div class="sidebar" id="sidebar">
+		<ul>
+			<li><a href="#">Info</a></li>
+			<li><a href="#">Produk</a></li>
+			<li><a href="#">Kontak</a></li>
+		</ul>
+	</div>
 	<div class="background">
 		<div class="content">
 			<h1>FLUX CAFE</h1>
@@ -79,51 +90,90 @@
 		</div>
 	</div>
 	<main>
-			<section class="about-cafe">
-				<div class="about-text">
-					<h2>Menikmati hari dengan suasana tenang</h2>
-					<!-- <hr> -->
-				</div>
-				
-				<div class="about-images">
-					<figure class="image-box">
-						<img src="/assets/img/cafe/641bdd769d71641649d7f9b289ea0843.webp" width="100%" alt="Suasana Cafe">
-					</figure>
-					<figure class="image-box">
-						<img src="/assets/img/cafe/641bdd769d71641649d7f9b289ea0843.webp" width="100%" alt="Menu Andalan">
-					</figure>
-					<figure class="image-box">
-						<img src="/assets/img/cafe/641bdd769d71641649d7f9b289ea0843.webp" width="100%" alt="Pengalaman Unik">
-					</figure>
-				</div>
-				
-				<article>
-					<p>
-						<strong>Flux Cafe</strong> adalah kafe unik dengan konsep tema yang berubah setiap hari, menciptakan pengalaman berbeda bagi setiap pengunjung. Dari suasana romantis hingga futuristik, setiap malam membawa nuansa baru yang ditentukan oleh voting pelanggan. Dengan dekorasi fleksibel, menu variatif, dan kolaborasi dengan UMKM lokal, Flux Cafe menghadirkan tempat nongkrong yang interaktif, dinamis, dan selalu fresh.
-					</p>
-				</article>
-			</section>
-			<section class="menu-flux">
-					<!-- <h2>Menikmati hari dengan suasana tenang</h2> -->
-					
-					<article class="menu-flux-link">
-						<h2>Semua Menu Flux Cafe</h2>
-						<ul>
-							<li id="semua" onClick="showAllMenu()">
-								Semua
-							</li>
-							<li id="Makanan" onclick="filterMenu('food')">
-								Makanan
-							</li>
-							<li id="minuman" onclick="filterMenu('drink')">
-								minuman
-							</li>
-						</ul>
-					</article>
-					<div class="menu-card">
-						
-						
-						<!-- <div class="product-card">
+		<section class="about-cafe">
+			<div class="about-text">
+				<h2>Menikmati hari dengan suasana tenang</h2>
+				<!-- <hr> -->
+			</div>
+
+			<div class="about-images">
+				<figure class="image-box">
+					<img src="/assets/img/cafe/641bdd769d71641649d7f9b289ea0843.webp" width="100%" alt="Suasana Cafe">
+				</figure>
+				<figure class="image-box">
+					<img src="/assets/img/cafe/641bdd769d71641649d7f9b289ea0843.webp" width="100%" alt="Menu Andalan">
+				</figure>
+				<figure class="image-box">
+					<img src="/assets/img/cafe/641bdd769d71641649d7f9b289ea0843.webp" width="100%"
+						alt="Pengalaman Unik">
+				</figure>
+			</div>
+
+			<article>
+				<p>
+					<strong>Flux Cafe</strong> adalah kafe unik dengan konsep tema yang berubah setiap hari, menciptakan
+					pengalaman berbeda bagi setiap pengunjung. Dari suasana romantis hingga futuristik, setiap malam
+					membawa nuansa baru yang ditentukan oleh voting pelanggan. Dengan dekorasi fleksibel, menu variatif,
+					dan kolaborasi dengan UMKM lokal, Flux Cafe menghadirkan tempat nongkrong yang interaktif, dinamis,
+					dan selalu fresh.
+				</p>
+			</article>
+		</section>
+		<section class="menu-flux">
+			<!-- <h2>Menikmati hari dengan suasana tenang</h2> -->
+
+			<article class="menu-flux-link">
+				<h2>Semua Menu Flux Cafe</h2>
+				<ul>
+					<li id="semua" onClick="showAllMenu()">
+						Semua
+					</li>
+					<li id="Makanan" onclick="filterMenu('food')">
+						Makanan
+					</li>
+					<li id="minuman" onclick="filterMenu('drink')">
+						minuman
+					</li>
+				</ul>
+			</article>
+			<div class="menu-card">
+
+
+			
+
+			</div>
+
+
+		</section>
+	</main>
+	<aside id="kontak">
+		<div class="profile">
+			<img src="assets/img/profile.png" width="150px" alt="mkeyzxi">
+			<!-- <img src="assets/img/icon-flux.png" width="150px" alt="mkeyzxi"> -->
+			<h3>CEOO Flux Cafe</h3>
+			<div class="kontak">
+				<ul>
+					<li><a href="https://wa.me/085342181132" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/makbul-n-ab30a4280/" target="_blank"><i
+								class="fab fa-linkedin"></i></a></li>
+					<li><a href="https://www.facebook.com/profile.php?id=100008627230468" target="_blank"><i
+								class="fab fa-facebook"></i></a></li>
+					<li><a href="https://www.instagram.com/mkeyzxi/" target="_blank"><i
+								class="fab fa-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</aside>
+	<footer>
+		<p>Copyright 2025 &copy; Flux Cafe</p>
+	</footer>
+	<script src="assets/js/script.js"></script>
+</body>
+
+
+</html>
+
+	<!-- <div class="product-card">
 							<div class="like-badge">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#FFCF50" d="m20.27 16.265l.705-4.08a1.666 1.666 0 0 0-1.64-1.95h-5.182a.833.833 0 0 1-.821-.969l.663-4.045a4.8 4.8 0 0 0-.09-1.973a1.64 1.64 0 0 0-1.093-1.137l-.145-.047a1.35 1.35 0 0 0-.993.068c-.34.164-.588.463-.68.818l-.476 1.834a7.6 7.6 0 0 1-.656 1.679c-.416.777-1.058 1.4-1.725 1.975l-1.44 1.24a1.67 1.67 0 0 0-.572 1.406l.813 9.393A1.666 1.666 0 0 0 8.596 22h4.649c3.481 0 6.452-2.426 7.024-5.735"/><path fill="#FFCF50" fill-rule="evenodd" d="M2.968 9.485a.75.75 0 0 1 .78.685l.97 11.236a1.237 1.237 0 1 1-2.468.107V10.234a.75.75 0 0 1 .718-.749" clip-rule="evenodd" opacity="0.5"/></svg> 30 likes
 							</div>
@@ -163,32 +213,3 @@
 							<h3 class="product-title">Lavender Shake</h3>
 							<p class="product-price">$20.00 <button class="buy-btn">BUY NOW</button></p>
 						</div> -->
-						
-					</div>
-					
-					
-			</section>
-	</main>
-	<aside id="kontak">
-		<div class="profile">
-			<!-- <img src="assets/img/profile.png" width="150px" alt="mkeyzxi"> -->
-			<img src="assets/img/icon-flux.png" width="150px" alt="mkeyzxi">
-			<h3>CEOO Flux Cafe</h3>
-			<div class="kontak">
-				<ul>
-					<li><a href="https://wa.me/085342181132" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/makbul-n-ab30a4280/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-					<li><a href="https://www.facebook.com/profile.php?id=100008627230468" target="_blank"><i class="fab fa-facebook"></i></a></li>
-					<li><a href="https://www.instagram.com/mkeyzxi/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</aside>
-	<footer>
-		<p>Copyright 2025 &copy; Flux Cafe</p>
-	</footer>
-	<script src="assets/js/script.js"></script>
-</body>
-
-
-</html>
