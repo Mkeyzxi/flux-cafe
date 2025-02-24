@@ -121,8 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
 	const header = document.querySelector('header');
 	const {pageYOffset} = window;
-	console.log(pageYOffset);
-
 	if (pageYOffset > 0) {
 		header.style.boxShadow = '0 2px 20px var(--text)';
 	} else {
