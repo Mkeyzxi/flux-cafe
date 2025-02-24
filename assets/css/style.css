@@ -138,7 +138,7 @@ header .social-media .media {
 	width: 90%;
 }
 .hamburger:hover span {
-	background-color: #2563eb;
+	background-color: var(--heading);
 }
 
 /* class rotate humberger */
