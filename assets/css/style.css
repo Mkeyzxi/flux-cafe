@@ -355,7 +355,7 @@ img {
 	width: 100%; /* Sesuaikan dengan kebutuhan */
 	height: 100%;
 	object-fit: cover;
-	object-position: center;
+	object-podetion: center;
 }
 
 /* h2 {
@@ -488,7 +488,7 @@ main section.menu-flux .menu-card {
 	background: #444;
 }
 
-/* aside */
+/* aee */
 /* --- Aside Profile --- */
 /* --- Variabel Warna --- */
 :root {
@@ -499,7 +499,7 @@ main section.menu-flux .menu-card {
 	--background: #fefae0;
 }
 
-/* --- Aside Profile --- */
+/* --- aside Profile --- */
 aside#kontak {
 	width: 230px;
 	height: 340px;
