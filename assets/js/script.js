@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const humburgerMenu = document.getElementById('menu-hamburger');
 	let condition = false;
-	const sidebar = document.getElementById('sidebar');
+	const navMobile = document.getElementById('nav-mobile');
 	const span = document.querySelectorAll('span');
 
 	humburgerMenu.addEventListener('click', () => {
@@ -94,20 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (condition) {
 				span[1].style.visibility = 'hidden';
 				span[3].style.visibility = 'hidden';
-				sidebar.style.display = 'block';
-				sidebar.style.right = '0';
+				navMobile.style.display = 'block';
+				navMobile.style.right = '0';
 			} else {
 				span[1].style.visibility = 'visible';
 				span[3].style.visibility = 'visible';
-				sidebar.style.display = 'none';
+				navMobile.style.display = 'none';
 			}
 		}
 	});
 
-	// menutup sidebar otomatis jika layar diperbesar ke ukuran laptop
+	// menutup navMobile otomatis jika layar diperbesar ke ukuran laptop
 	window.addEventListener('resize', () => {
 		if (window.innerWidth >= 768) {
-			sidebar.style.display = 'none';
+			navMobile.style.display = 'none';
 			condition = false; // Reset kondisi agar tidak tetap terbuka di mode mobile setelah resize
 			span[1].style.visibility = 'visible';
 			span[3].style.visibility = 'visible';
