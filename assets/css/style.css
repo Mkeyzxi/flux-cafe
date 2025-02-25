@@ -211,7 +211,7 @@ header .social-media .media {
 	text-align: center;
 	overflow: hidden;
 	box-shadow: 0px 15px 25px rgba(98, 111, 71, 0.6);
-	margin-top: 3.8rem;
+	margin-top: 2rem;
 }
 
 /* Overlay effect */
@@ -299,21 +299,26 @@ header .social-media .media {
 }
 
 main {
-	width: 80%;
+	width: 100vw;
 	/* background-color: red !important; */
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
+	flex-wrap: wrap;
 	justify-items: center;
 	align-items: center;
 	gap: 40px;
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
-	padding-left: 7%;
+	/* padding: 2.5rem 4rem; */
+	/* padding-left: 7%; */
+	display: flex;
+	/* flex-direction: row; */
 }
 /* about-cafe */
 
 section.about-cafe {
-	width: 100%;
+	width:75%;
+	padding-left: 4rem;
 
 	/* color: red; */
 
@@ -333,7 +338,6 @@ section.about-cafe .about-text hr {
 	border: none;
 	margin: 0 10px;
 	display: flex;
-	color: black;
 }
 /* end about cafe */
 
@@ -343,7 +347,7 @@ section.about-cafe .about-images {
 	gap: 10px;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 }
 section.about-cafe figure {
 	width: 340px;
@@ -367,7 +371,7 @@ img {
 	width: 100%; /* Sesuaikan dengan kebutuhan */
 	height: 100%;
 	object-fit: cover;
-	object-podetion: center;
+	object-position: center;
 }
 
 /* h2 {
@@ -375,11 +379,13 @@ img {
 } */
 
 main section.menu-flux {
-	width: 100%;
+	width:75%;
+	padding-left: 4rem;
 	display: flex;
 	flex-direction: column;
 	justify-items: center;
 	align-items: center;
+	order: 3;
 }
 main section.menu-flux .menu-flux-link {
 	justify-content: space-between;
@@ -521,6 +527,7 @@ aside#kontak {
 	border-bottom: 4px solid var(--primary);
 	border-radius: 8px;
 	margin: 3rem auto;
+	order: 2;
 
 	position: relative;
 	box-shadow: 1.5px 1.5px 4px rgba(34, 32, 32, 0.3);
@@ -614,13 +621,25 @@ footer {
 	header .social-media .media {
 		display: none;
 	}
+	main section.menu-flux {
+		/* padding: 1rem 3rem !important; */
+	}
+	main .about-cafe {
+		padding: 0 2rem ;
+		width: 100vw;
+	}
 	main section.menu-flux .menu-flux-link {
 		justify-content: center;
 		align-items: center;
+		gap: 5px;
+		flex-direction: column;
 	}
 	main {
-		width: 100%;
+		width: 100vw;
 		/* padding: 10px 5px; */
+		padding: 0px !important;
+		margin: 0px;
+		/* margin-top: 1rem; */
 	}
 	main section.menu-flux .menu-card {
 		/* padding: 5px 5px; */
@@ -628,15 +647,16 @@ footer {
 		justify-content: center;
 		align-items: center;
 		flex: wrap;
-		/* background: red; */
+		/* width: 100% !important; */
+		width: 100%;
 	}
 	
 	.nav-links {
 		display: none;
 	}
 	main section.menu-flux .menu-card .product-card {
-		width: 160px;
-		padding: 10px 0;
+		/* width: 130px; */
+		/* padding: 10px 0; */
 	}
 
 	main section.menu-flux ul {
@@ -660,6 +680,11 @@ footer {
 	.product-info{
 		flex-direction: column;
 	}
+	main section.menu-flux {
+		width: 100vw;
+		padding: 0;
+		order: 2;
+	}
 	
 }
 
@@ -668,22 +693,26 @@ footer {
 		width: 100%;
 		padding-inline: 20px;
 	}
-
+	
 	
 
 	section.about-cafe {
 		align-items: center;
 		text-align: center;
+		width: 100%;
 	}
 
 	section.about-cafe .about-images {
-		gap: 15px;
+		width: 100%;
 	}
 
 	section.about-cafe figure {
 		flex: 1;
 	}
-
+	main section.menu-flux {
+		width: 100%;
+		order: 2;
+	}
 	main section.menu-flux ul {
 		flex-wrap: wrap;
 		justify-content: center;
@@ -694,12 +723,16 @@ footer {
 	}
 
 	.product-card {
-		width: 180px;
+		width: 180px !important;
+		padding: 5px;
 	}
 
 	aside#kontak {
 		width: 270px;
 		height: 330px;
 		padding: 10px;
+		order: 3;
+		padding-left: 0px;
 	}
+
 }
